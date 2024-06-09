@@ -38,27 +38,44 @@ int access_file(int i, int argc, char **argv)
     }
     return(1);
 }
-
-int start()
+char **some_var()
 {
+    char *r_path;
+    char **cmd;
 
+    cmd = cmd_part(argv[i + 2]);
+    r_path = find_path(argv[i + 2]);
 }
-int end()
+void start(int p[], int i, char **argv, int *rd_fp)
 {
+    int rd_fp;
 
+    dup2(argv[1],STDIN_FILENO);
+    rd_fp = dup(p[0]);
+    close(p[0]);
+    dup2(p[1],STDOUT_FILENO);
+    execve(r_path,cmd,NULL);//je peut ecrire des var env a la pace de null
+    close(p[1]);
+    exit(0);// exit mn child or not
 }
-int others()
-{
 
+
+
+void end(int i, char **argv, int *rd_fp)
+{
+    
+}
+void others(int p[], int i, char **argv, int *rd_fp)
+{
+    
 }
 void child_proc(int argc,char **argv)
 {
     int i;
     int p[2];
     int pid;
-    char *r_path;
-    char *cmd;
     int rd_fp;
+    char **var;
 
     i = 0;
     while(i < argc - 3)
@@ -70,11 +87,13 @@ void child_proc(int argc,char **argv)
             write_err("create child process is denied/failed");// exit or not !!
         if((i == 0 || i == argc - 4) && !access_file(i, argc, argv))
             continue;
+        var =  some_var();
         if(i == 0)
-            rd_fp = start();
+            start(p, i, argv, &rd_fp);
         else if(i == argc - 4)
-            rd_fp = end();
+            end(i, argv, &rd_fp);
         else
-            rd_fp = others();   
+            rd_fp = others(p, i, argv, &rd_fp);
+        i++;
     }
 }
