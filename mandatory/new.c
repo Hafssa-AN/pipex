@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../includes/pipex.h"
 void her_doc()
 {
     open();
@@ -35,11 +35,11 @@ int check_file(char *file)
     }
     return(1);
 }
-const char find_path(char *envp[],cahr *argv)
+const char find_path(char *envp[],char *argv)
 {
     int i;
     char **p;
-    char *r_path
+    char *r_path;
 
     i = 0;
     //calculer la taille du tab ou not !!!!!!!!!!!!!!!!!!
@@ -125,7 +125,7 @@ int main(int argc, char *argv[], char *envp[])
                 close(p[1]);
                 exit(0);// exit mn child or not
             }
-            else if(i == argc - 2)
+            else if(i == argc - 4)
             {
                 dup2(rd_fp,STDIN_FILENO);
                 close(rd_fp);
