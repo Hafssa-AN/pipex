@@ -61,7 +61,7 @@ const char find_path(char *envp[],char *argv)
             if(p[i] == NULL)
             {
                 write_err("command not found");
-                return(NULL);
+                return(NULL);//i think i need to exit
             }
         }
 

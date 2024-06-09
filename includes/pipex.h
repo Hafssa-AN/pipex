@@ -16,5 +16,11 @@
 # include <unistd.h>
 # include <errno.h>
 # include <sys/wait.h>
+#include <fcntl.h>
+
+void child_proc(int argc,char **argv, char *envp[]);
+const char find_path(char *envp[],char *argv);
+char *my_cpy(int len, char *argv);
+char **some_var(char *envp[],char *argv);
 
 #endif

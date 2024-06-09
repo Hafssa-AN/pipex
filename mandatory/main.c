@@ -11,12 +11,17 @@
 /* ************************************************************************** */
 #include "../includes/pipex.h"
 
-int main(int argc, char **argv)
+int main(int argc, char **argv, char *envp[])
 {
+    int i;
+    
     if(argc != 5)
     {
         write(1, "invalid arguments",17);
         exit(1);
     }
-    child_proc(argc,argv);
+    child_proc(argc, argv, envp);
+    i = 0;
+    while (i++ < argc - 3)
+        wait(NULL);
 }

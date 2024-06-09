@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 #include "../includes/pipex.h"
 
-
+void write_err(char *msg)
+{
+    perror(msg);
+}
 int access_file(int i, int argc, char **argv)
 {
     int j;
@@ -38,38 +41,36 @@ int access_file(int i, int argc, char **argv)
     }
     return(1);
 }
-char **some_var()
+void start(int p[], char *argv, int *rd_fp, char **var)
 {
-    char *r_path;
-    char **cmd;
-
-    cmd = cmd_part(argv[i + 2]);
-    r_path = find_path(argv[i + 2]);
-}
-void start(int p[], int i, char **argv, int *rd_fp)
-{
-    int rd_fp;
-
-    dup2(argv[1],STDIN_FILENO);
-    rd_fp = dup(p[0]);
+    dup2(argv,STDIN_FILENO);
+    *rd_fp = dup(p[0]);
     close(p[0]);
     dup2(p[1],STDOUT_FILENO);
-    execve(r_path,cmd,NULL);//je peut ecrire des var env a la pace de null
+    execve(var[0],var[1],NULL);//je peut ecrire des var env a la pace de null
     close(p[1]);
     exit(0);// exit mn child or not
 }
-
-
-
-void end(int i, char **argv, int *rd_fp)
+void end(char *argv, int *rd_fp, char **var)
 {
-    
+    dup2(*rd_fp,STDIN_FILENO);
+    close(*rd_fp);
+    dup2(argv,STDOUT_FILENO);
+    execve(var[0],var[1],NULL);
+    //when we dup a file withot open it , we don't need to close it
 }
-void others(int p[], int i, char **argv, int *rd_fp)
+void others(int p[], int *rd_fp, char **var)
 {
-    
+    dup2(rd_fp,STDIN_FILENO);
+    close(rd_fp);
+    rd_fp = dup(p[0]);
+    close(p[0]);
+    dup2(p[1],STDOUT_FILENO);
+    execve(var[0],var[1],NULL);
+    close(p[1]);
+    //exit or not !!!!!!!!!!!!!!!
 }
-void child_proc(int argc,char **argv)
+void child_proc(int argc,char **argv, char *envp[])
 {
     int i;
     int p[2];
@@ -87,13 +88,13 @@ void child_proc(int argc,char **argv)
             write_err("create child process is denied/failed");// exit or not !!
         if((i == 0 || i == argc - 4) && !access_file(i, argc, argv))
             continue;
-        var =  some_var();
+        var =  some_var(envp,argv[i + 2]);
         if(i == 0)
-            start(p, i, argv, &rd_fp);
+            start(p, argv[1], &rd_fp, var);
         else if(i == argc - 4)
-            end(i, argv, &rd_fp);
+            end(argv[argc], &rd_fp, var);
         else
-            rd_fp = others(p, i, argv, &rd_fp);
+            others(p, &rd_fp, var);
         i++;
     }
 }
