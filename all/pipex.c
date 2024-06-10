@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/08 19:19:39 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/08 19:19:43 by hanebaro         ###   ########.fr       */
+/*   Created: 2024/04/20 19:29:42 by hanebaro          #+#    #+#             */
+/*   Updated: 2024/04/20 19:29:46 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/pipex.h"
+#include "pipex.h"
 
-int main(int argc, char **argv, char *envp[])
+char *const *some_var(char *envp[],char *argv)
 {
-    int i;
+    char *const *tab;
+
     
-    if(argc != 5)
-    {
-        write(1, "invalid arguments",17);
-        exit(1);
-    }
-    
-    child_proc(argc, argv, envp);
-    i = 0;
-    while (i++ < argc - 3)
-        wait(NULL);
 }

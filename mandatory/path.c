@@ -1,6 +1,3 @@
-#include "../includes/pipex.h"
-#include <stdio.h>
-
 // Fonction pour vérifier si argv est un chemin absolu
 char *check_absolute_path(char *argv) {
     if (strchr(argv, '/'))
@@ -34,12 +31,12 @@ char *find_executable(char *path_env, char *argv) {
         full_path = ft_strjoin(dirs[i], "/");
         full_path = ft_strjoin(full_path, argv);
         if (access(full_path, X_OK) == 0) {
-            // ft_free_split(dirs);
+            ft_free_split(dirs);
             return full_path;
         }
-        // free(full_path);
+        free(full_path);
     }
-    // ft_free_split(dirs);
+    ft_free_split(dirs);
 
     return NULL;
 }
@@ -64,13 +61,4 @@ char *find_path(char *envp[], char *argv) {
         write_err("command not found");
 
     return full_path;
-}
-
-int main(int argc, char **argv, char *envp[])
-{
-    char *str ;
-
-    (void)argc;
-    str = (char *)find_path(envp,argv[1]);
-    printf("[%s]\n",str);
 }
