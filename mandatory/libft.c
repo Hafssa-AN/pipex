@@ -81,11 +81,13 @@ char *find_path(char *envp[],char *argv)
 
     i = 0;
     if(ft_strchr(argv,'/'))
-        return(argv);//protect strchr or not
+	{
+		return(argv);//protect strchr or not
+	}
+        
 	
     while(envp[i] != NULL)
     {
-		// printf("[%s]\n",envp[i]);
         if(ft_strncmp(envp[i],"PATH",4) == 0)//verifier est ce que on a PATH or $PATH et le retour de strncmp 
         {
             p = ft_split(envp[i],':');// n oublie pas de identifier que le separateur c :
@@ -126,6 +128,7 @@ char *my_cpy(int len, char *argv)
 }
 char **some_var(char *envp[],char *argv)
 {
+	
     char **cmd;
     int i;
     int j;
@@ -133,21 +136,26 @@ char **some_var(char *envp[],char *argv)
 
     l = 1;
     i = 0;
+	
 	cmd = (char **)malloc(sizeof(char *) * 4);
 	if (!cmd)
 		return (NULL);
-    cmd[0] = find_path(envp, cmd[l]);
     while(argv[i] && argv[i] != ' ')
         i++;
+		
     cmd[l++] = my_cpy(i, argv);
+	cmd[0] = find_path(envp, cmd[l - 1]);
+	cmd[l - 1] = find_path(envp, cmd[l - 1]);
     j = 0;
     while(argv[i])
     {
         j++;
         i++;
-    }    
+    }   
     if(j != 0)
+	{
         cmd[l++] = my_cpy(j - 1, argv + (i - j + 1));
+	}
     else
         cmd[l] = NULL;
     return (cmd);

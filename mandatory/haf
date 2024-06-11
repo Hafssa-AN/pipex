@@ -1,0 +1,11 @@
+-rwxr-xr-x  1 hanebaro  candidates  18120 Jun 11 18:21 a.out
+-rw-r--r--  1 hanebaro  candidates      0 Jun 10 19:31 free.c
+-rw-r--r--  1 hanebaro  candidates      0 Jun 11 18:22 input
+-rw-r--r--  1 hanebaro  candidates   5250 Jun 10 19:42 libft.c
+-rw-r--r--  1 hanebaro  candidates   1175 Jun 11 17:03 main.c
+-rw-r--r--  1 hanebaro  candidates      0 Jun 11 18:21 outfile.txt
+-rw-r--r--  1 hanebaro  candidates   1483 Jun 10 17:54 path.c
+-rw-r--r--  1 hanebaro  candidates   3738 Jun 11 17:37 proc.c
+-rw-r--r--  1 hanebaro  candidates   1696 Jun 10 19:33 test.c
+-rw-r--r--  1 hanebaro  candidates   5250 Jun 10 19:42 libft.c
+-rw-r--r--  1 hanebaro  candidates   1483 Jun 10 17:54 path.c
