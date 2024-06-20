@@ -42,8 +42,7 @@ void start(int *p, char *argv, int *rd_fp, char **var)
 {
     
     int fd;
-    printf("[%s]\n",argv);
-    fd = open(argv, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    fd = open(argv, O_RDONLY );
     
     if (fd == -1)
     {
@@ -58,7 +57,7 @@ void start(int *p, char *argv, int *rd_fp, char **var)
     // printf("p[1] = %d\n",p[1]);
     
     dup2(STDOUT_FILENO,p[1]);
-    // printf("before p[1] = %s\n",var[3]);exit(1);
+    
     execve(var[0],&var[1],NULL);//je peut ecrire des var env a la pace de null
     // Si execve réussit, le processus enfant est remplacé par la commande exécutée
     // Sinon, le code suivant sera exécuté (en cas d'erreur)
@@ -99,6 +98,9 @@ void others(int p[], int *rd_fp, char **var)
     exit(1);
     //exit or not !!!!!!!!!!!!!!!
 }
+
+#define BUFFER_SIZE 1024
+
 void child_proc(int argc,char **argv, char *envp[])
 {
     // (void)argv;
@@ -108,6 +110,11 @@ void child_proc(int argc,char **argv, char *envp[])
     int pid;
     int rd_fp;
     char **var;
+
+
+
+    char buffer[BUFFER_SIZE];
+    ssize_t bytesRead;
 
     i = -1;
     while(++i < argc - 3)
@@ -135,8 +142,9 @@ void child_proc(int argc,char **argv, char *envp[])
             var =  some_var(envp,argv[i + 2]);
             if(i == 0)
             {
-                printf("in start\n");
+                
                 start(p, argv[1], &rd_fp, var);
+                printf("in start in i = %d\n",i);
             }
                 
             else if(i == argc - 4)
@@ -152,9 +160,17 @@ void child_proc(int argc,char **argv, char *envp[])
                 
             }
             
-        }   
-        if(i == 0)
-            break; 
+        }  
+        
+        
+    }printf("before p[1] = %d\n in i = %d",p[1],i);
+        // exit(1); printf("hhhvvvvvvvvvvhhhh");
+    while ((bytesRead = read(p[1], buffer, BUFFER_SIZE)) > 0) {
+        write(STDOUT_FILENO, buffer, bytesRead);
+        printf("hhhhhhh");
+    
+        // if(i == 0)
+        //     break; 
     }   
         
     
