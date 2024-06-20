@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   path_bonus                                         :+:      :+:    :+:   */
+/*   path_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 16:15:02 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/20 16:15:03 by hanebaro         ###   ########.fr       */
+/*   Updated: 2024/06/20 16:30:35 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,13 +105,13 @@ char *find_path(char *envp[], char *argv)
 
     path_env = get_path_env(envp);
     if (!path_env) {
-        write_err("envp PATH not found");
+        error("envp PATH not found");
         return NULL;
     }
 
     full_path = find_executable(path_env, argv);
     if (!full_path)
-        write_err("command not found");
+        error("command not found");
 
     return full_path;
 }

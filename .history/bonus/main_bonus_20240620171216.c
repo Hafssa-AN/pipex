@@ -6,7 +6,7 @@
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 07:29:54 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/20 17:16:54 by hanebaro         ###   ########.fr       */
+/*   Updated: 2024/06/20 17:12:16 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,16 +79,12 @@ int main(int argc, char **argv, char *envp[])
             my_exit();    
         dup2(fd, STDIN_FILENO);
     }
-    
     while(i < argc - 2)
         pipes(argv[i++], envp);
-    
     if(i == argc - 2)
     {
         fd = open(argv[argc - 1], O_WRONLY | O_CREAT | O_APPEND, 0644);
-	    printf("in in [%d]\n",fd);
-            exit(1);
-        if (fd == -1)
+	    if (fd == -1)
         {
             printf("in argc - 1\n");
             exit(1);
@@ -96,7 +92,6 @@ int main(int argc, char **argv, char *envp[])
         }
 		    
     }
-    
     end(fd, argv[argc - 2], envp);
     while ((argc--) - 3 > 0)//verifie the condition
         wait(NULL);//if i wait more than number of child process exist , it s probleme or not ??

@@ -6,7 +6,7 @@
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:49:43 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/20 16:20:51 by hanebaro         ###   ########.fr       */
+/*   Updated: 2024/06/20 16:20:47 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	*new_word(const char *s, int *i, char c)
 	int		len;
 	char	*words;
 
-	len = ft_strlen((char *)s);
+	len = ft_strlen(()s);
 	start = *i;
 	while (s[*i] && s[*i] != c)
 		(*i)++;

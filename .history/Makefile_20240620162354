@@ -1,6 +1,6 @@
-NAME = pipex
+NAME = pipex.a
 
-NAMEB = pipex_bonus
+NAMEB = pipex_bonus.a
 
 CC = cc
 
@@ -27,7 +27,7 @@ $(NAME): $(OBJS) $(HEADER)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 $(NAMEB): $(BONUS_OBJS) $(HEADER_BONUS)
-	$(CC) $(CFLAGS) $(BONUS_OBJS) -o $@
+	$(CC) $(CFLAGS) $(BONUS_OBJS) -o $(NAMEB)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -38,7 +38,7 @@ clean:
 	$(rm) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	$(rm) $(NAME) $(NAMEB)
+	$(rm) $(OBJS) $(BONUS_OBJS)
 
 re: fclean all
 

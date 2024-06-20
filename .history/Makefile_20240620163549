@@ -1,6 +1,6 @@
 NAME = pipex
 
-NAMEB = pipex_bonus
+NAMEB = pipex_bonus.a
 
 CC = cc
 

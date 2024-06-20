@@ -1,6 +1,6 @@
-NAME = pipex
+NAME = pipex.a
 
-NAMEB = pipex_bonus
+NAMEB = pipex_bonus.a
 
 CC = cc
 
@@ -38,7 +38,7 @@ clean:
 	$(rm) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	$(rm) $(NAME) $(NAMEB)
+	$(rm) $(NAME) $(BONUS_OBJS)
 
 re: fclean all
 

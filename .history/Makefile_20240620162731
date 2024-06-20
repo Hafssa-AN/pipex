@@ -1,6 +1,6 @@
-NAME = pipex
+NAME = pipex.a
 
-NAMEB = pipex_bonus
+NAMEB = pipex_bonus.a
 
 CC = cc
 
@@ -33,7 +33,7 @@ $(NAMEB): $(BONUS_OBJS) $(HEADER_BONUS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(NAMEB)
-
+	$(CC) $(CFLAGS) $(OBJS) -o $@
 clean:
 	$(rm) $(OBJS) $(BONUS_OBJS)
 

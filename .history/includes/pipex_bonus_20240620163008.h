@@ -6,7 +6,7 @@
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 07:33:08 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/20 16:30:09 by hanebaro         ###   ########.fr       */
+/*   Updated: 2024/06/20 16:30:08 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int	ft_strcmp(const char *s1, const char *s2);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 char *find_path(char *envp[], char *argv);
 char **some_var(char *envp[],char *argv);
-char	**ft_split(const char *s, char c);
+char	**ft_split(const char *s, char c)
 //ajouter static or not before fontion name
 #endif
