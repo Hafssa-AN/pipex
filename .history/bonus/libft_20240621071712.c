@@ -6,7 +6,7 @@
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 16:14:57 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/21 07:19:32 by hanebaro         ###   ########.fr       */
+/*   Updated: 2024/06/21 07:17:12 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
 
+	if()
 	i = 0;
 	while ((s1[i] || s2[i]))
 	{

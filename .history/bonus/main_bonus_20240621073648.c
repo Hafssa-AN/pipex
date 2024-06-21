@@ -6,7 +6,7 @@
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 07:29:54 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/21 07:39:13 by hanebaro         ###   ########.fr       */
+/*   Updated: 2024/06/21 07:36:48 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int main(int argc, char **argv, char *envp[])
     if(i == argc - 2)
     {
         fd = open(argv[argc - 1], O_WRONLY | O_CREAT | O_APPEND, 0644);
+	    printf("in in [%d]\n",fd);
+            exit(1);
         if (fd == -1)
         {
             printf("in argc - 1\n");
