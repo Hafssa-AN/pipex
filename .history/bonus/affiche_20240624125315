@@ -1,0 +1,354 @@
+execve("./pipex_bonus", ["./pipex_bonus", "infile", "yes hello", "head -n 20", "outfile"], 0x7fffba13cc78 /* 102 vars */) = 0
+brk(NULL)                               = 0x63c48e42d000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffdf3b6c920) = -1 EINVAL (Invalid argument)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=38479, ...}) = 0
+mmap(NULL, 38479, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7351f925b000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300A\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\7\2C\n\357_\243\335\2449\206V>\237\374\304"..., 68, 880) = 68
+fstat(3, {st_mode=S_IFREG|0755, st_size=2029592, ...}) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7351f9259000
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\7\2C\n\357_\243\335\2449\206V>\237\374\304"..., 68, 880) = 68
+mmap(NULL, 2037344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7351f9067000
+mmap(0x7351f9089000, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x22000) = 0x7351f9089000
+mmap(0x7351f9201000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19a000) = 0x7351f9201000
+mmap(0x7351f924f000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7351f924f000
+mmap(0x7351f9255000, 13920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7351f9255000
+close(3)                                = 0
+arch_prctl(ARCH_SET_FS, 0x7351f925a540) = 0
+mprotect(0x7351f924f000, 16384, PROT_READ) = 0
+mprotect(0x63c48df8f000, 4096, PROT_READ) = 0
+mprotect(0x7351f9292000, 4096, PROT_READ) = 0
+munmap(0x7351f925b000, 38479)           = 0
+openat(AT_FDCWD, "outfile", O_WRONLY|O_CREAT|O_TRUNC, 0644) = 3
+openat(AT_FDCWD, "infile", O_RDONLY)    = 4
+dup2(4, 0)                              = 0
+pipe([5, 7])                            = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7351f925a810) = 7508
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x2), ...}) = 0
+brk(NULL)                               = 0x63c48e42d000
+brk(0x63c48e44e000)                     = 0x63c48e44e000
+write(1, "before execve\n", 14before execve
+)         = 14
+close(7)                                = 0
+dup2(5, 0)                              = 0
+close(5)                                = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7351f925a810) = 7509
+close(3)                                = 0
+close(4)                                = 0
+wait4(-1, strace: Process 7509 attached
+ <unfinished ...>
+[pid  7509] dup2(3, 1)                  = 1
+[pid  7509] close(3)                    = 0
+strace: Process 7508 attached
+[pid  7509] access("/usr/local/rvm/gems/ruby-3.2.4/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/rvm/gems/ruby-3.2.4@global/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/rvm/rubies/ruby-3.2.4/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/vscode/bin/linux-x64/5437499feb04f7a586f677b155b039bc2b3669eb/bin/remote-cli/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/home/codespace/.local/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/home/codespace/.dotnet/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/home/codespace/nvm/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/home/codespace/.php/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/home/codespace/.python/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/home/codespace/java/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/home/codespace/.ruby/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/home/codespace/.local/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/python/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/py-utils/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/oryx/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/go/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/go/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/sdkman/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/sdkman/candidates/java/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/sdkman/candidates/gradle/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/sdkman/candidates/maven/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/sdkman/candidates/ant/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/rvm/gems/default/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/rvm/gems/default@global/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/rvm/rubies/default/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/share/rbenv/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/php/current/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/opt/conda/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/nvs/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/share/nvm/versions/node/v20.14.0/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/hugo/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/sbin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/local/bin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/sbin/head", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] access("/usr/bin/head", X_OK) = 0
+[pid  7509] execve("/usr/bin/head", ["/usr/bin/head", "-n", "20"], 0x7ffdf3b6ca28 /* 102 vars */) = 0
+[pid  7509] brk(NULL)                   = 0x59197bbe9000
+[pid  7509] arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc240b6bf0) = -1 EINVAL (Invalid argument)
+[pid  7509] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid  7509] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=38479, ...}) = 0
+[pid  7509] mmap(NULL, 38479, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc5247b6000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300A\2\0\0\0\0\0"..., 832) = 832
+[pid  7509] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  7509] pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+[pid  7509] pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\7\2C\n\357_\243\335\2449\206V>\237\374\304"..., 68, 880) = 68
+[pid  7509] fstat(3, {st_mode=S_IFREG|0755, st_size=2029592, ...}) = 0
+[pid  7509] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7dc5247b4000
+[pid  7509] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  7509] pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+[pid  7509] pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\7\2C\n\357_\243\335\2449\206V>\237\374\304"..., 68, 880) = 68
+[pid  7509] mmap(NULL, 2037344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7dc5245c2000
+[pid  7509] mmap(0x7dc5245e4000, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x22000) = 0x7dc5245e4000
+[pid  7509] mmap(0x7dc52475c000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19a000) = 0x7dc52475c000
+[pid  7509] mmap(0x7dc5247aa000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7dc5247aa000
+[pid  7509] mmap(0x7dc5247b0000, 13920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7dc5247b0000
+[pid  7509] close(3)                    = 0
+[pid  7509] arch_prctl(ARCH_SET_FS, 0x7dc5247b5580) = 0
+[pid  7509] mprotect(0x7dc5247aa000, 16384, PROT_READ) = 0
+[pid  7509] mprotect(0x59197abfc000, 4096, PROT_READ) = 0
+[pid  7509] mprotect(0x7dc5247ed000, 4096, PROT_READ) = 0
+[pid  7509] munmap(0x7dc5247b6000, 38479) = 0
+[pid  7509] brk(NULL)                   = 0x59197bbe9000
+[pid  7509] brk(0x59197bc0a000)         = 0x59197bc0a000
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=3035952, ...}) = 0
+[pid  7509] mmap(NULL, 3035952, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc5242dc000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=2996, ...}) = 0
+[pid  7509] read(3, "# Locale name alias data base.\n#"..., 4096) = 2996
+[pid  7509] read(3, "", 4096)           = 0
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_IDENTIFICATION", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=252, ...}) = 0
+[pid  7509] mmap(NULL, 252, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc5247ec000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=27002, ...}) = 0
+[pid  7509] mmap(NULL, 27002, PROT_READ, MAP_SHARED, 3, 0) = 0x7dc5247b9000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MEASUREMENT", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=23, ...}) = 0
+[pid  7509] mmap(NULL, 23, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc5247b8000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_TELEPHONE", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=47, ...}) = 0
+[pid  7509] mmap(NULL, 47, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc5247b7000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_ADDRESS", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=131, ...}) = 0
+[pid  7509] mmap(NULL, 131, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc5247b6000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_NAME", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=62, ...}) = 0
+[pid  7509] mmap(NULL, 62, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc5242db000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_PAPER", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=34, ...}) = 0
+[pid  7509] mmap(NULL, 34, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc5242da000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MESSAGES", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MESSAGES/SYS_LC_MESSAGES", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=48, ...}) = 0
+[pid  7509] mmap(NULL, 48, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc5242d9000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MONETARY", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=270, ...}) = 0
+[pid  7509] mmap(NULL, 270, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc5242d8000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_COLLATE", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=1518110, ...}) = 0
+[pid  7509] mmap(NULL, 1518110, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc524165000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_TIME", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=3360, ...}) = 0
+[pid  7509] mmap(NULL, 3360, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc524164000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_NUMERIC", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=50, ...}) = 0
+[pid  7509] mmap(NULL, 50, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc524163000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_CTYPE", O_RDONLY|O_CLOEXEC) = 3
+[pid  7509] fstat(3, {st_mode=S_IFREG|0644, st_size=201272, ...}) = 0
+[pid  7509] mmap(NULL, 201272, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7dc524131000
+[pid  7509] close(3)                    = 0
+[pid  7509] openat(AT_FDCWD, "/usr/share/locale/C.UTF-8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid  7509] openat(AT_FDCWD, "/usr/share/locale/C.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid  7509] openat(AT_FDCWD, "/usr/share/locale/C/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid  7509] openat(AT_FDCWD, "/usr/share/locale-langpack/C.UTF-8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid  7509] openat(AT_FDCWD, "/usr/share/locale-langpack/C.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid  7509] openat(AT_FDCWD, "/usr/share/locale-langpack/C/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid  7509] read(0,  <unfinished ...>
+[pid  7508] fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x2), ...}) = 0
+[pid  7508] brk(NULL)                   = 0x63c48e42d000
+[pid  7508] brk(0x63c48e44e000)         = 0x63c48e44e000
+[pid  7508] write(1, "before execve\n", 14before execve
+) = 14
+[pid  7508] close(5)                    = 0
+[pid  7508] dup2(7, 1)                  = 1
+[pid  7508] close(7)                    = 0
+[pid  7508] access("/usr/local/rvm/gems/ruby-3.2.4/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/rvm/gems/ruby-3.2.4@global/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/rvm/rubies/ruby-3.2.4/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/vscode/bin/linux-x64/5437499feb04f7a586f677b155b039bc2b3669eb/bin/remote-cli/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/home/codespace/.local/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/home/codespace/.dotnet/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/home/codespace/nvm/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/home/codespace/.php/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/home/codespace/.python/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/home/codespace/java/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/home/codespace/.ruby/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/home/codespace/.local/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/python/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/py-utils/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/oryx/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/go/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/go/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/sdkman/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/sdkman/candidates/java/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/sdkman/candidates/gradle/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/sdkman/candidates/maven/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/sdkman/candidates/ant/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/rvm/gems/default/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/rvm/gems/default@global/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/rvm/rubies/default/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/share/rbenv/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/php/current/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/opt/conda/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/nvs/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/share/nvm/versions/node/v20.14.0/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/hugo/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/sbin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/local/bin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/sbin/yes", X_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] access("/usr/bin/yes", X_OK) = 0
+[pid  7508] execve("/usr/bin/yes", ["/usr/bin/yes", "hello"], 0x7ffdf3b6ca28 /* 102 vars */) = 0
+[pid  7508] brk(NULL)                   = 0x630644208000
+[pid  7508] arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc56713690) = -1 EINVAL (Invalid argument)
+[pid  7508] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid  7508] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=38479, ...}) = 0
+[pid  7508] mmap(NULL, 38479, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dffb6f000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] read(5, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300A\2\0\0\0\0\0"..., 832) = 832
+[pid  7508] pread64(5, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  7508] pread64(5, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+[pid  7508] pread64(5, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\7\2C\n\357_\243\335\2449\206V>\237\374\304"..., 68, 880) = 68
+[pid  7508] fstat(5, {st_mode=S_IFREG|0755, st_size=2029592, ...}) = 0
+[pid  7508] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x725dffb6d000
+[pid  7508] pread64(5, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  7508] pread64(5, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+[pid  7508] pread64(5, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\7\2C\n\357_\243\335\2449\206V>\237\374\304"..., 68, 880) = 68
+[pid  7508] mmap(NULL, 2037344, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 5, 0) = 0x725dff97b000
+[pid  7508] mmap(0x725dff99d000, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 5, 0x22000) = 0x725dff99d000
+[pid  7508] mmap(0x725dffb15000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 5, 0x19a000) = 0x725dffb15000
+[pid  7508] mmap(0x725dffb63000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 5, 0x1e7000) = 0x725dffb63000
+[pid  7508] mmap(0x725dffb69000, 13920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x725dffb69000
+[pid  7508] close(5)                    = 0
+[pid  7508] arch_prctl(ARCH_SET_FS, 0x725dffb6e580) = 0
+[pid  7508] mprotect(0x725dffb63000, 16384, PROT_READ) = 0
+[pid  7508] mprotect(0x630642ecd000, 4096, PROT_READ) = 0
+[pid  7508] mprotect(0x725dffba6000, 4096, PROT_READ) = 0
+[pid  7508] munmap(0x725dffb6f000, 38479) = 0
+[pid  7508] brk(NULL)                   = 0x630644208000
+[pid  7508] brk(0x630644229000)         = 0x630644229000
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=3035952, ...}) = 0
+[pid  7508] mmap(NULL, 3035952, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dff695000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=2996, ...}) = 0
+[pid  7508] read(5, "# Locale name alias data base.\n#"..., 4096) = 2996
+[pid  7508] read(5, "", 4096)           = 0
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_IDENTIFICATION", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=252, ...}) = 0
+[pid  7508] mmap(NULL, 252, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dffba5000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=27002, ...}) = 0
+[pid  7508] mmap(NULL, 27002, PROT_READ, MAP_SHARED, 5, 0) = 0x725dffb72000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MEASUREMENT", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=23, ...}) = 0
+[pid  7508] mmap(NULL, 23, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dffb71000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_TELEPHONE", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=47, ...}) = 0
+[pid  7508] mmap(NULL, 47, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dffb70000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_ADDRESS", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=131, ...}) = 0
+[pid  7508] mmap(NULL, 131, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dffb6f000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_NAME", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=62, ...}) = 0
+[pid  7508] mmap(NULL, 62, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dff694000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_PAPER", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=34, ...}) = 0
+[pid  7508] mmap(NULL, 34, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dff693000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MESSAGES", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MESSAGES/SYS_LC_MESSAGES", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=48, ...}) = 0
+[pid  7508] mmap(NULL, 48, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dff692000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MONETARY", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=270, ...}) = 0
+[pid  7508] mmap(NULL, 270, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dff691000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_COLLATE", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=1518110, ...}) = 0
+[pid  7508] mmap(NULL, 1518110, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dff51e000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_TIME", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=3360, ...}) = 0
+[pid  7508] mmap(NULL, 3360, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dff51d000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_NUMERIC", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=50, ...}) = 0
+[pid  7508] mmap(NULL, 50, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dff51c000
+[pid  7508] close(5)                    = 0
+[pid  7508] openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_CTYPE", O_RDONLY|O_CLOEXEC) = 5
+[pid  7508] fstat(5, {st_mode=S_IFREG|0644, st_size=201272, ...}) = 0
+[pid  7508] mmap(NULL, 201272, PROT_READ, MAP_PRIVATE, 5, 0) = 0x725dff4ea000
+[pid  7508] close(5)                    = 0
+[pid  7508] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 8190 <unfinished ...>
+[pid  7509] <... read resumed>"hello\nhello\nhello\nhello\nhello\nhe"..., 8192) = 8190
+[pid  7508] <... write resumed>)        = 8190
+[pid  7509] lseek(0, -8070, SEEK_CUR)   = -1 ESPIPE (Illegal seek)
+[pid  7509] fstat(0, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+[pid  7509] fstat(1, {st_mode=S_IFREG|0666, st_size=0, ...}) = 0
+[pid  7509] close(0)                    = 0
+[pid  7509] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 120) = 120
+[pid  7508] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 8190 <unfinished ...>
+[pid  7509] close(1)                    = 0
+[pid  7509] close(2 <unfinished ...>
+[pid  7508] <... write resumed>)        = 8190
+[pid  7509] <... close resumed>)        = 0
+[pid  7509] exit_group(0 <unfinished ...>
+[pid  7508] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 8190 <unfinished ...>
+[pid  7509] <... exit_group resumed>)   = ?
+[pid  7508] <... write resumed>)        = 8190
+[pid  7508] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 8190) = 8190
+[pid  7508] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 8190) = 8190
+[pid  7509] +++ exited with 0 +++
+[pid  7508] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 8190 <unfinished ...>
+[pid  7507] <... wait4 resumed>NULL, 0, NULL) = 7509
+[pid  7508] <... write resumed>)        = 8190
+[pid  7507] --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=7509, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+[pid  7507] wait4(-1,  <unfinished ...>
+[pid  7508] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 8190) = 8190
+[pid  7508] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 8190) = 8190
+[pid  7508] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 8190) = 8190
+[pid  7508] write(1, "hello\nhello\nhello\nhello\nhello\nhe"..., 8190

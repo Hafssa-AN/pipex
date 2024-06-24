@@ -1,0 +1,2 @@
+gdb ./pipex_bonus
+(gdb) run infile "yes hello" "head -n 20" outfile
