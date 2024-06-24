@@ -15,8 +15,8 @@ HEADER_BONUS = ./includes/pipex_bonus.h
 SRCS = ./mandatory/main.c ./mandatory/libft.c ./mandatory/path.c ./mandatory/tools.c \
 		./mandatory/errors.c	./mandatory/ft_split.c
 
-BONUS = ./bonus/main_bonus.c ./bonus/errors_bonus.c ./bonus/get_next_line.c  ./bonus/ft_split.c \
-		./bonus/here_doc_bonus.c ./bonus/libft.c ./bonus/path_bonus.c  ./bonus/tools.c   
+BONUS = ./bonus/pipex_bonus.c ./bonus/errors_bonus.c ./bonus/get_next_line.c  ./bonus/ft_split.c \
+		./bonus/here_doc_bonus.c ./bonus/libft.c ./bonus/path_bonus.c    
 
 OBJS = $(SRCS:.c=.o)
 

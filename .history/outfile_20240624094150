@@ -1,0 +1,8 @@
+total 48
+-rwxrwxrwx   1 hanebaro  candidates   844B Jun 24 09:37 Makefile
+drwxr-xr-x  16 hanebaro  candidates   544B Jun 24 09:41 bonus
+drwxrwxrwx   4 hanebaro  candidates   136B Jun 20 07:49 includes
+-rw-r--r--   1 hanebaro  candidates     0B Jun 22 18:39 infile
+drwxr-xr-x   8 hanebaro  candidates   272B Jun 21 16:26 mandatory
+-rw-r--r--   1 hanebaro  candidates     0B Jun 24 09:41 outfile
+-rwxr-xr-x   1 hanebaro  candidates    18K Jun 24 09:41 pipex_bonus

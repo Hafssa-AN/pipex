@@ -6,7 +6,7 @@
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 07:29:54 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/21 15:31:33 by hanebaro         ###   ########.fr       */
+/*   Updated: 2024/06/22 19:30:39 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	setup_and_process(int fd, int argc, char **argv, char *envp[])
 		pipes(argv[i++], envp);
 	if (i == argc - 2)
 	{
-		fd = open(argv[argc - 1], O_WRONLY | O_CREAT | O_APPEND, 0644);
+		fd = open(argv[argc - 1], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 		if (fd == -1)
 		{
 			printf("in argc - 1\n");

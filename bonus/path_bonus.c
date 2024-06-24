@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   path_bonus.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 16:15:02 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/21 16:02:41 by hanebaro         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/pipex_bonus.h"
 
 void	ft_free_split(char **tab)
@@ -57,6 +45,7 @@ char	*find_executable(char *path_env, char *argv)
 	char	*full_path;
 	int		i ;
 
+	i = 0;
 	dirs = ft_split(path_env, ':');
 	while (dirs[i])
 	{
