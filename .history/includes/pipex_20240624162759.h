@@ -1,21 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex_bonus.h                                      :+:      :+:    :+:   */
+/*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 07:33:08 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/24 16:29:31 by hanebaro         ###   ########.fr       */
+/*   Created: 2024/04/20 19:30:06 by hanebaro          #+#    #+#             */
+/*   Updated: 2024/06/24 16:27:59 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_BONUS_H
-# define PIPEX_BONUS_H
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+#ifndef PIPEX_H
+# define PIPEX_H
 
 # include <unistd.h>
 # include <errno.h>
@@ -27,16 +23,13 @@
 
 void	my_exit(void);
 void	error(char *str);
-char	*get_next_line(int fd);
-void	here_doc(int argc, char **argv, int fd[]);
-size_t	ft_strlen(char *s);
-int		ft_strchr(char *s, int c);
-char	*ft_strjoin(char *s1, char *s2, int x);
-int		ft_strcmp(const char *s1, const char *s2);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*find_path(char *envp[], char *argv);
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2, int x);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strcmp(const char *s1, const char *s2);
 char	**ft_split(const char *s, char c);
 void	pipes(char *cmd, char **envp, int *input_fd);
-char	**exec_var(char **envp, char *argv);
 
 #endif

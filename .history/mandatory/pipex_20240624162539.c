@@ -6,7 +6,7 @@
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 07:29:54 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/24 16:27:10 by hanebaro         ###   ########.fr       */
+/*   Updated: 2024/06/24 16:25:39 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	**exec_var(char **envp, char *argv)
 		if (argv[i++] != 32)
 			ex = 1;
 	}
-	if (ex == 0)
+	if (ex == 0)ft_strcmp
 		error("command not found:\n");
 	cmd = ft_split(argv, ' ');
 	path = find_path(envp, cmd[0]);

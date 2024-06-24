@@ -6,7 +6,7 @@
 /*   By: hanebaro <hanebaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 07:33:08 by hanebaro          #+#    #+#             */
-/*   Updated: 2024/06/24 16:29:31 by hanebaro         ###   ########.fr       */
+/*   Updated: 2024/06/24 16:29:30 by hanebaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*find_path(char *envp[], char *argv);
 char	**ft_split(const char *s, char c);
 void	pipes(char *cmd, char **envp, int *input_fd);
-char	**exec_var(char **envp, char *argv);
+char	**exec_var(char **envp, char *argv)
 
 #endif
