@@ -16,7 +16,7 @@ SRCS = ./mandatory/pipex.c ./mandatory/libft.c ./mandatory/path.c  \
 		./mandatory/errors.c	./mandatory/ft_split.c	./mandatory/pipes.c
 
 BONUS = ./bonus/pipex_bonus.c ./bonus/errors_bonus.c ./bonus/get_next_line_bonus.c  ./bonus/ft_split_bonus.c \
-		./bonus/here_doc_bonus.c ./bonus/libft_bonus.c ./bonus/path_bonus.c    ./bonus/pipes_bonus.c
+		./bonus/here_doc_bonus.c ./bonus/libft.c ./bonus/path_bonus.c    ./bonus/pipes_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 
